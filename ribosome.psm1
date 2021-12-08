@@ -163,7 +163,7 @@ function ribosome {
     process {
         foreach ($object in $DnaArgs) {
             Write-Debug "process-block: $object" 
-            Invoke-Expression $rnaFile $object -ErrorAction Continue
+            $object | Invoke-Expression $rnaFile -ErrorAction Continue
         }
     }    
     # clean up
